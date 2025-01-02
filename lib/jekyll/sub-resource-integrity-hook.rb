@@ -50,6 +50,8 @@ module Jekyll
         tag['integrity'] = integrity
         tag['crossorigin'] ||= 'anonymous'
         updated = true
+
+        puts "Generated SRI for: #{absolute_path_source}"
       end
 
       # Write updated HTML if changes were made
@@ -59,6 +61,9 @@ module Jekyll
     end
 
     Jekyll::Hooks.register :site, :post_write do |site|
+
+      puts "Generating sub resource integrity (SRI) hashes..."
+
       site.each_site_file do |file|
         # Process only HTML files
         next unless file.extname == '.html'
