@@ -6,7 +6,7 @@ module Jekyll
   class SubResourceIntegrityHook
 
     # Translates the URL of a file to a relative path of a file by removing the base url.
-    # @param site [String] The site object
+    # @param site [Jekyll::Site] The site object
     # @param url [String] The URL to the asset
     # @return [String] The URL to the asset without the baseurl
     def self._compute_path_to_asset(site, url)
@@ -27,11 +27,11 @@ module Jekyll
     end
 
     # Updates the HTML file by including sub resource integrity (SRI) attributes. The hashes are computed on the fly.
-    # @param site [String] Absolute path to the destination folder
+    # @param site [Jekyll::Site] Absolute path to the destination folder
     # @param relative_path_source [String] Relative path of the source file
     def self._process_html (site, relative_path_source)
 
-      # read and parse the file
+      # Read and parse the file
       absolute_path_source = File.join(site.dest, _compute_path_to_asset(site, relative_path_source))
       content = File.read(absolute_path_source)
       doc = Nokogiri::HTML(content)
@@ -45,13 +45,13 @@ module Jekyll
         absolute_path_asset = File.join(site.dest, _compute_path_to_asset(site, path))
         next unless File.exist?(absolute_path_asset)
 
-        # Calculate SRI hash
+        # Add attributes
         integrity = _compute_integrity_sha256(absolute_path_asset)
         tag['integrity'] = integrity
         tag['crossorigin'] ||= 'anonymous'
         updated = true
 
-        puts "Generated SRI for: #{absolute_path_source}"
+        Jekyll.logger.info "Generated subresource integrity hash for: #{absolute_path_source}"
       end
 
       # Write updated HTML if changes were made
@@ -61,8 +61,7 @@ module Jekyll
     end
 
     Jekyll::Hooks.register :site, :post_write do |site|
-
-      puts "Generating sub resource integrity (SRI) hashes..."
+      Jekyll.logger.info "Generating subresource integrity (SRI) hashes..."
 
       site.each_site_file do |file|
         # Process only HTML files
