@@ -3,7 +3,7 @@ require 'base64'
 require 'nokogiri'
 
 module Jekyll
-  class SubResourceIntegrityHook
+  class SubresourceIntegrityHook
 
     # Translates the URL of a file to a relative path of a file by removing the base url.
     # @param site [Jekyll::Site] The site object

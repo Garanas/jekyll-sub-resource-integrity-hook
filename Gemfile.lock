@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll-sub-resource-integrity-hook (0.0.1)
+    jekyll-subresource-integrity-hook (0.0.1)
       jekyll (> 3.3, < 5.0)
       nokogiri (~> 1.18.1)
 
@@ -78,7 +78,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
-  jekyll-sub-resource-integrity-hook!
+  jekyll-subresource-integrity-hook!
 
 BUNDLED WITH
    2.5.22

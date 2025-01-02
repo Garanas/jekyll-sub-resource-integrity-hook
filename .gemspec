@@ -1,8 +1,8 @@
-require_relative "lib/sub-resource-integrity-hook/version"
+require_relative "lib/subresource-integrity-hook/version"
 
 Gem::Specification.new do |s|
-  s.name = 'jekyll-sub-resource-integrity-hook'
-  s.version = Jekyll::SubResourceIntegrityHook::VERSION
+  s.name = 'jekyll-subresource-integrity-hook'
+  s.version = Jekyll::SubresourceIntegrityHook::VERSION
   s.date = '2025-01-02'
   s.summary = 'Introduces the filter `file_integrity` to compute the subresource integrity (SRI) hash of a file.'
   s.description = ''

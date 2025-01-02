@@ -42,9 +42,9 @@ group :jekyll_plugins do
     # (...)
 
     # Used to generate the subresource integrity (SRI) hash of linked assets.
-    # - https://github.com/Garanas/jekyll-sub-resource-integrity-hook
+    # - https://github.com/Garanas/jekyll-subresource-integrity-hook
 
-    gem 'jekyll-sub-resource-integrity-hook', git: "https://github.com/Garanas/jekyll-sub-resource-integrity-hook"
+    gem 'jekyll-subresource-integrity-hook', git: "https://github.com/Garanas/jekyll-subresource-integrity-hook"
 end
 ```
 
@@ -55,7 +55,7 @@ And then add the plugin to your site's configuration file:
 ```yaml
 plugins:
   - (...)
-  - jekyll-sub-resource-integrity-hook
+  - jekyll-subresource-integrity-hook
 ```
 
 ## Usage

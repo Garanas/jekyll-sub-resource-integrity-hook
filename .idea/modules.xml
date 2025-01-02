@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/sub-resource-integrity-hook.iml" filepath="$PROJECT_DIR$/.idea/sub-resource-integrity-hook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/subresource-integrity-hook.iml" filepath="$PROJECT_DIR$/.idea/subresource-integrity-hook.iml" />
     </modules>
   </component>
 </project>
